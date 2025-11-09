@@ -1,7 +1,7 @@
 import { Inngest } from "inngest";
 import { connectDB } from "./db.js";
 import { User } from "../models/user.model.js";
-import { upsertStreamUser } from "./stream.js";
+import { deleteStreamUser, upsertStreamUser } from "./stream.js";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "slack-app" });
@@ -37,7 +37,7 @@ const deleteUserFromDB=inngest.createFunction(
         const { id }=event.data;
         await User.deleteOne({clerkId:id});
 
-        await upsertStreamUser(id.toString());
+        await deleteStreamUser(id.toString());
     }
 )
 // Create an empty array where we'll export future Inngest functions
