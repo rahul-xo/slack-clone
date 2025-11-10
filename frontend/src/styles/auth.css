@@ -10,7 +10,7 @@
     radial-gradient(ellipse at top left, rgba(116, 58, 213, 0.15) 0%, transparent 50%),
     radial-gradient(ellipse at bottom right, rgba(74, 21, 75, 0.15) 0%, transparent 50%);
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .auth-left {
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding:0 5rem;
+  padding: 0 7rem;
 }
 
 .auth-right {
@@ -71,7 +71,6 @@
 }
 
 .hero-title {
-  /* Font size kam kiya (3.5rem se 3.25rem) */
   font-size: 2rem;
   font-weight: 800;
   line-height: 1.1;
@@ -80,15 +79,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  /* Margin kam ki (2rem se 1.5rem) */
   margin-top: 1.5rem;
 }
 
 .hero-subtitle {
-  /* Font size kam kiya (1.25rem se 1.15rem) */
   font-size: 1.15rem;
   line-height: 1.6;
-  /* Margin kam ki (2rem se 1.5rem) */
   margin-bottom: 1.5rem;
   opacity: 0.9;
   color: #f8f9fa;
@@ -98,9 +94,7 @@
 .features-list {
   display: flex;
   flex-direction: column;
-  /* Gap kam kiya (1rem se 0.75rem) */
   gap: 0.75rem;
-  /* Margin kam ki (2rem se 1.5rem) */
   margin-bottom: 1.5rem;
 }
 
@@ -108,7 +102,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* Padding kam ki (1rem se 0.75rem) */
   padding: 0.75rem 1.25rem;
   background: rgba(116, 58, 213, 0.08);
   border-radius: 1rem;
@@ -144,7 +137,6 @@
   color: white;
   font-size: 1.125rem;
   font-weight: 600;
-  /* Padding kam ki (1.25rem se 1.1rem) */
   padding: 1.1rem 2.5rem;
   border-radius: 1rem;
   border: 1px solid rgba(114, 9, 183, 0.3);
@@ -217,40 +209,67 @@
   background: linear-gradient(45deg, rgba(74, 21, 75, 0.15), rgba(45, 27, 105, 0.15));
 }
 
-/* Responsive Design */
+/* ===== YAHAN MOBILE STYLES BADAL GAYE HAIN ===== */
 @media (max-width: 768px) {
   .auth-container {
     flex-direction: column;
   }
 
   .auth-left {
-    padding: 2rem 1.5rem;
+    padding: 0; /* Padding hata di */
+    height: 100%;
   }
 
   .auth-hero {
-    padding: 2rem;
+    width: 100%;
+    height: 100%; /* Poori height lene ke liye */
+    border-radius: 0; /* Mobile par corners goal nahi rahenge */
+    border: none; /* Mobile par border hata diya */
+    
+    /* Content ko vertically phailane ke liye */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* YEH SABSE ZAROORI HAI */
+    
+    padding: 2.5rem 1.5rem; /* Screen ke andar content ke liye padding */
   }
 
   .auth-right {
-    /* Mobile par min-height hata di (scroll fix) */
-    /* min-height: 40vh; */
-    padding: 1rem;
+    display: none;
   }
-
-  .auth-image-container {
-    max-width: 360px;
-    max-height: 420px;
-    animation: float 5s ease-in-out infinite;
-  }
-
+  
+  /* Baaki styles content ko adjust karne ke liye */
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .features-list {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-item {
+    padding: 0.75rem 1rem;
+  }
+
+  .cta-button {
+    padding: 1.1rem 2.5rem;
   }
 
   .brand-name {
     font-size: 2rem;
   }
 }
+/* ===== YAHAN TAK BADLAAV HAIN ===== */
+
 
 .auth-container::before {
   content: "";
@@ -283,7 +302,6 @@
   pointer-events: none;
 }
 
-/* Floating Animation */
 @keyframes float {
 
   0%,
