@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
     res.send("hello there");
 })
 app.use("/api/inngest", serve({ client: inngest, functions }));
-app.use("/api/chats",chatRoutes);
+app.use("/api/chat",chatRoutes);
 
 Sentry.setupExpressErrorHandler(app);
 const startServer=async()=>{

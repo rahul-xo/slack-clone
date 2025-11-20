@@ -40,5 +40,4 @@ const deleteUserFromDB=inngest.createFunction(
         await deleteStreamUser(id.toString());
     }
 )
-// Create an empty array where we'll export future Inngest functions
 export const functions = [syncUser,deleteUserFromDB];

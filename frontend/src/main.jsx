@@ -33,7 +33,7 @@ Sentry.init({
 });
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
@@ -44,5 +44,4 @@ createRoot(document.getElementById("root")).render(
         </QueryClientProvider>
       </BrowserRouter>
     </ClerkProvider>
-  </StrictMode>
 );

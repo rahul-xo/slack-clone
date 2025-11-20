@@ -8,7 +8,6 @@ import {PlusIcon} from "lucide-react"
 import {
   Chat,
   Channel,
-  ChannelList,
   MessageList,
   MessageInput,
   Thread,

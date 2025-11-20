@@ -1,4 +1,3 @@
-import React, { use } from "react";
 import { createContext, useEffect } from "react";
 import { useAuth } from "@clerk/clerk-react";
 import { axiosInstance } from "../lib/axios.js";
@@ -7,8 +6,7 @@ import toast from "react-hot-toast";
 const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
-
-const { getToken } = useAuth();
+  const { getToken } = useAuth();
 
   useEffect(() => {
     const interceptor = axiosInstance.interceptors.request.use(
