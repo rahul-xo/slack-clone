@@ -7,7 +7,7 @@ const CustomChannelPreview = ({ channel, setActiveChannel, activeChannel }) => {
     channel.data.member_count === 2 && channel.data.id.includes("user_");
   if (isDM) return null;
 
-  const unreadCount = channel.unreadCount;
+  const unreadCount = channel.countUnread();
 
   return (
     <button

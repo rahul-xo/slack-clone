@@ -17,6 +17,7 @@ import {
 import CreateChannelModal from "../components/CreateChannelModal.jsx";
 import CustomChannelPreview from "../components/CustomChannelPreview.jsx";
 import UserList from "../components/UserList.jsx";
+import CustomChannelHeader from "../components/CustomChannelHeader.jsx";
 
 const HomePage = () => {
   const [isCreateModalOpen, setisCreateModalOpen] = useState(false);
@@ -107,7 +108,7 @@ const HomePage = () => {
             <div className="chat-main">
               <Channel channel={activeChannel}>
                 <Window>
-                  {/* <CustomChannelHeader /> */}
+                  <CustomChannelHeader />
                   <MessageList />
                   <MessageInput />
                 </Window>
