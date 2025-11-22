@@ -1,4 +1,4 @@
-import React, { StrictMode } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -18,7 +18,7 @@ if (!PUBLISHABLE_KEY) {
 }
 
 Sentry.init({
-  dsn: "https://d8014b6c9dc39dac61e4627e84c410cf@o4510304875184128.ingest.de.sentry.io/4510339085107280",
+  dsn: import.meta.env.VITE_SENTRY_DSN,
   sendDefaultPii: true,
   integrations: [
     Sentry.reactRouterV7BrowserTracingIntegration({

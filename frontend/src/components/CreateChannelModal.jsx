@@ -32,7 +32,7 @@ const CreateChannelModal = ({ onClose }) => {
         );
 
         const usersOnly = response.users.filter((user) => !user.id.startsWith("recording-"));
-
+        
         setUsers(usersOnly || []);
       } catch (error) {
         console.log("Error fetching users");
