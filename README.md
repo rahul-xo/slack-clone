@@ -59,7 +59,7 @@ A team collaboration platform I built from scratch — real-time messaging, vide
 
 **Deployment**
 - Frontend → Vercel
-- Backend → Render
+- Backend → Also Vercel
 
 ---
 
