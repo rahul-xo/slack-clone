@@ -50,7 +50,7 @@ const HomePage = () => {
                 <div className="team-channel-list__header gap-4">
                   <div className="brand-container">
                     <img src="/slack-logo.png" alt="Logo" className="brand-logo" />
-                    <span className="brand-name">Slack</span>
+                    <span className="brand-name">Slab</span>
                   </div>
                   <div className="user-button-wrapper">
                     <UserButton />
